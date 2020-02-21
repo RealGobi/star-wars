@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import MovieList from './Components/MovieList';
 
 function App() {
   const [isloading, setloading] = useState(true);
@@ -16,8 +17,8 @@ function App() {
   }, [])
   console.log(movies);
 
-  const loading = (<div>Loading...</div>)
-  const displayMovies = (<div>movies...</div>)
+  const loading = <div>Loading...</div>;
+  const displayMovies = <MovieList movies = {movies} />;
 
   return (
     <div className="App">
