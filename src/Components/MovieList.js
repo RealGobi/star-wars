@@ -4,7 +4,12 @@ import Movie from './Movie/Movie';
 export default function MovieList( { movies } ) {
   return (
     <>
-    <Movie movies = {movies} />
+    { movies.map((movie, idx) => (
+      <Movie 
+        key = {idx}
+        movie = {movie} 
+        />
+    ))}
     </>
   )
 }
