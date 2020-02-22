@@ -1,0 +1,53 @@
+.single-movie {
+  width: 201px;
+  height: 168px;
+  background: rgb(59, 153, 216);
+  box-shadow: .5px .5px 1px .5px; 
+  border-radius: 4px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: 
+  "."
+  "title"
+  "release";
+}
+
+#title {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 26px;
+  text-align: center;
+}
+
+#release {
+  grid-area: release;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .single-movie {
+    background: rgb(53, 73, 93);
+    width: 307px;
+    height: 146px;
+  }
+
+  #title {
+    font-size: 26px;
+  }
+  
+  #release {
+    justify-content: flex-end;
+    align-items: flex-end;
+    font-size: 14px;
+    margin: 12px;
+  }
+
+}
+
