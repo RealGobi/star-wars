@@ -1,0 +1,25 @@
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px 44px;
+}
+
+@media only screen and (max-width: 1140px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .center {
+    height: 100%;
+    margin: 20px 0;
+  }
+}
