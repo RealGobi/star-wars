@@ -4,6 +4,7 @@ import './Movie-list.css';
 
 export default function MovieList( { movies } ) {
 
+  // sort movies on release date and map them out in Movie component
   return (
     <div className="center">
       <div className="grid-container">
