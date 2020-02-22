@@ -3,9 +3,12 @@ import './App.css';
 import MovieList from './Components/MovieList';
 
 function App() {
+
+  // state with loading to true as initial state
   const [isloading, setloading] = useState(true);
   const [movies, setMovies] = useState([]);
 
+  // useEffect to fetch data and set loading to false
   useEffect(() => {   
     const fetchData = async () => {
         const response = await fetch('https://swapi.co/api/films/'); 
@@ -15,11 +18,12 @@ function App() {
       }
       fetchData();
   }, [])
-  console.log(movies);
 
-  const loading = <div>Loading...</div>;
+  // content to display
+  const loading = <div>Loading...</div>; 
   const displayMovies = <MovieList movies = {movies} />;
 
+  // ternary operation to render loading or movies
   return (
     <div className="App">
     {isloading ? loading : displayMovies}
