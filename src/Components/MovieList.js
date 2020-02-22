@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Movie from './Movie/Movie';
 
 export default function MovieList( { movies } ) {
   return (
-    <div>
-      <h1>{ movies[0].title }</h1>
-    </div>
+    <>
+    <Movie movies = {movies} />
+    </>
   )
 }
