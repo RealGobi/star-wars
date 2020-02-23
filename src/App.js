@@ -20,7 +20,8 @@ function App() {
   }, [])
 
   // content to display
-  const loading = <div>Loading...</div>; 
+
+  const loading = <div class="fa-3x center"><i class="fas fa-spinner fa-pulse"></i></div>; 
   const displayMovies = <MovieList movies = {movies} />;
 
   // ternary operation to render loading or movies
