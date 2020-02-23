@@ -33,10 +33,7 @@ export default function Movie({ movie }) {
                   const fetchData = async () => {
                     const response = await fetch(characterUrl); 
                     const data = await response.json();
-                    setTimeout(() => {
-                      
                       setCharacters(data);
-                    }, 2000);
                   }
                   fetchData();
                 })}
