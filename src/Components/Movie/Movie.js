@@ -24,7 +24,13 @@ console.log(movie);
         <div className="popup-content">
           <div className="pop-up-grid">
             <div className="title-in-pop-up">{ movie.title }</div>
-            <p id="close" onClick={close}>Close</p>
+            <span id="close" onClick={close}>Close</span>
+            <div className="character">Character</div>
+              <div className="column">
+                { movie.characters.map((episod, idx) => (
+                  <p key={idx}>{episod}</p>
+                )) }
+              </div>
           </div>
         </div>
       )}
