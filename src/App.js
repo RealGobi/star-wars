@@ -5,7 +5,7 @@ import MovieList from './Components/MovieList';
 function App() {
 
   // state with loading to true as initial state
-  const [isloading, setloading] = useState(true);
+  const [isloading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
   // useEffect to fetch data and set loading to false
@@ -14,7 +14,7 @@ function App() {
         const response = await fetch('https://swapi.co/api/films/'); 
         const data = await response.json();
         setMovies(data.results);
-        setloading(false);
+        setLoading(false);
       }
       fetchData();
   }, [])
