@@ -1,11 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Popup from "reactjs-popup";
 import './Movie.css';
 
 export default function Movie({ movie }) {
-
-  // state with loading to true as initial state
-  const [characters, setCharacters] = useState([]);
 
   // trigger inside model, that renders first
   const clickOnCard = () => (
@@ -16,7 +13,24 @@ export default function Movie({ movie }) {
   );
 
   // when clicked, content inside Popup renders
-  const Modal = () => (
+  const Modal = () => {
+
+    const [character, setCharacter] = useState([])
+      useEffect(() => {   
+        movie.characters.map(char => {
+          const fetchData = async () => {
+            const response = await fetch(char); 
+            const data = await response.json();
+            return setCharacter(data);
+          }
+          fetchData();
+      })
+    }, [])
+    
+
+    console.log(character);
+    
+    return (
     <Popup
       trigger={clickOnCard()}
       modal
@@ -29,25 +43,12 @@ export default function Movie({ movie }) {
             <span id="close" onClick={close}>Close</span>
             <div className="character">Characters</div>
               <div className="column">
-                { movie.characters.map((characterUrl) => {
-                  const fetchData = async () => {
-                    const response = await fetch(characterUrl); 
-                    const data = await response.json();
-                    setTimeout(() => {
-                      
-                      setCharacters(data);
-                    }, 2000);
-                  }
-                  fetchData();
-                })}
-
               </div>
           </div>
         </div>
       )}
     </Popup>
-  );
-  console.log(characters.name);
+)};
 
   return (
     <Modal />
