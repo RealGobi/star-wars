@@ -12,6 +12,7 @@ export default function MovieList( { movies } ) {
         <Movie
           key = {idx}
           movie = {movie}
+          charUrl = {movie.characters}
           />
       ))}
       </div>
