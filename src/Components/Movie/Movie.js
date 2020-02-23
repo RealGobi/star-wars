@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Popup from "reactjs-popup";
 import './Movie.css';
 
-export default function Movie( { movie }) {
-console.log(movie);
+export default function Movie({ movie }) {
+
+  // state with loading to true as initial state
+  const [characters, setCharacters] = useState([]);
 
   // trigger inside model, that renders first
   const clickOnCard = () => (
@@ -25,18 +27,27 @@ console.log(movie);
           <div className="pop-up-grid">
             <div className="title-in-pop-up">{ movie.title }</div>
             <span id="close" onClick={close}>Close</span>
-            <div className="character">Character</div>
+            <div className="character">Characters</div>
               <div className="column">
-                { movie.characters.map((episod, idx) => (
-                  <p key={idx}>{episod}</p>
-                )) }
+                { movie.characters.map((characterUrl) => {
+                  const fetchData = async () => {
+                    const response = await fetch(characterUrl); 
+                    const data = await response.json();
+                    setTimeout(() => {
+                      
+                      setCharacters(data);
+                    }, 2000);
+                  }
+                  fetchData();
+                })}
+
               </div>
           </div>
         </div>
       )}
     </Popup>
   );
-
+  console.log(characters.name);
 
   return (
     <Modal />
