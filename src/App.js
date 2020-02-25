@@ -28,6 +28,7 @@ function App() {
   return (
     <div className="App">
     {isloading ? loading : displayMovies}
+    <span id="modal-root"></span>
     </div>
   );
 }
