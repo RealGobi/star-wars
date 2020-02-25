@@ -32,21 +32,6 @@
   font-size: 14px;
 }
 
-/* 
-* use !important to override buildin pop-up css-rules
-*/
-.popup-content {
-  height: 80vh;
-  width: 80vw !important;
-  margin: auto !important;
-  padding: 0 !important; 
-  background: rgb(236, 240, 241) !important; 
-}
-
-.popup-overlay {
-  background: rgba(0, 0, 0, 0)  !important; 
-}
-
 .pop-up-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
