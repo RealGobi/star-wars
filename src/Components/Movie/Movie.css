@@ -2,7 +2,7 @@
   width: 201px;
   height: 168px;
   background: rgb(59, 153, 216);
-  box-shadow: .5px .5px 1px .5px; 
+  border: 1px solid rgb(35, 77, 115);
   border-radius: 4px;
   cursor: pointer;
   display: grid;
@@ -82,6 +82,7 @@
 @media only screen and (max-width: 1140px) {
   .single-movie {
     background: rgb(53, 73, 93);
+    border: 1px solid rgb(28, 67, 96);
     width: 307px;
     height: 146px;
   }
