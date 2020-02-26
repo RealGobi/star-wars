@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './Modal.css';
 
   const Modal = ({ children }) => {
     
-    return(
+  // render a modal truh createPortal from ReactDOM
+
+  return (
     ReactDOM.createPortal(
       <div className="modal">
         {children}

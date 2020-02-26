@@ -25,6 +25,7 @@ function App() {
   const displayMovies = <MovieList movies = {movies} />;
 
   // ternary operation to render loading or movies
+  // in <span>; render modal
   return (
     <div className="App">
     {isloading ? loading : displayMovies}
