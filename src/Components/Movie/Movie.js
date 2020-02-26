@@ -8,6 +8,8 @@ export default function Movie({ movie }) {
   
   const [character, setCharacter] = useState([])
 
+  // fetching character in a loop, "char" is a url to character
+  // push it to an array and then set it to state.
   useEffect(() => {  
     const arr = []; 
     movie.characters.map(char => {
@@ -15,9 +17,9 @@ export default function Movie({ movie }) {
         const response = await fetch(char); 
         const data = await response.json();
         arr.push(data)
-        setCharacter(arr);
       }
       fetchData();
+      setCharacter(arr);
     })
   }, [])
 
