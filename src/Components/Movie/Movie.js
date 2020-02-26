@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Toggle from '../Popup/Toggle';
 import Modal from '../Popup/Modal';
@@ -7,7 +7,19 @@ import './Movie.css';
 export default function Movie({ movie }) {
   
   const [character, setCharacter] = useState([])
-console.log(character);
+
+  useEffect(() => {  
+    const arr = []; 
+    movie.characters.map(char => {
+      const fetchData = async () => {
+        const response = await fetch(char); 
+        const data = await response.json();
+        arr.push(data)
+        setCharacter(arr);
+      }
+      fetchData();
+    })
+  }, [])
 
   return (
     <>
@@ -25,9 +37,7 @@ console.log(character);
               <span id="close" onClick={hide}>Close</span>
               <div className="character">Characters</div>
               <div className="column">
-              <ul>
-               {character.map((char, idx) => <li key={idx}>{char.name}</li>)}
-              </ul>       
+               {character.map((char, idx) => <p key={idx}>{char.name}</p>)}
           </div>
             </div>
           </div>
