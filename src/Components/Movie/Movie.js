@@ -21,7 +21,7 @@ export default function Movie({ movie }) {
       fetchData();
       setCharacter(arr);
     })
-  }, [])
+  }, [movie.characters])
 
   return (
     <>
