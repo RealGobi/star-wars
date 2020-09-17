@@ -11,7 +11,7 @@ function App() {
   // useEffect to fetch data and set loading to false
   useEffect(() => {   
     const fetchData = async () => {
-        const response = await fetch('https://swapi.co/api/films/'); 
+        const response = await fetch('https://swapi.dev/api/films/'); 
         const data = await response.json();
         setMovies(data.results);
         setLoading(false);
